@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="referrer" content="never">
+  <title>Letitia_后台管理-注册</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+  <div class="row register container-fluid">
+    <div class="col-6">
+      <div class="register-box">
+        <form>
+            <div class="form-group clearfix">
+              <label for="username" class="relabel">用户名</label>
+              <input type="text" class="form-control reinput reinput" id="username" autocomplete="off" placeholder="输入用户名"
+                name="username" />
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group clearfix">
+              <label for="email"  class="relabel">邮箱</label>
+              <input type="text" class="form-control reinput" id="email" autocomplete="off" placeholder="输入邮箱" name="email" />
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group clearfix">
+              <label for="pwd"  class="relabel">密码</label>
+              <input type="password" class="form-control reinput" id="pwd" autocomplete="off" placeholder="输入密码" name="pwd" />
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group clearfix">
+              <label for="repwd" class="relabel">确认密码</label>
+              <input type="password" class="form-control reinput" id="repwd" autocomplete="off" placeholder="输入确认密码"
+                name="repwd" />
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group clearfix">
+              <label for="code" class="relabel">验证码</label>
+              <div class="code fr">
+                <button id="getcode" type="button" class="btn btn-secondary fr">获取验证码</button>
+                <div class="fl">
+                  <input type="text" class="form-control reinput" id="code" autocomplete="off" placeholder="" name="code" />
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <button id="register" type="button" class="btn btn-primary btn-block">注册</button>
+            <div class="loginbtn">已有账号？<a href="/login">登录</a></div>
+        </form>
+      </div>
+    </div>
+      
+    <!-- <div class="col-6">
+      <div class="right">Lay</div>
+    </div> -->
+  </div>
+
+  <script src="/js/validForm.js"></script>
+  <script src="/js/jquery-3.4.1.js"></script>
+  <script src="/js/register.js"></script>
+
+</body>
+
+</html>

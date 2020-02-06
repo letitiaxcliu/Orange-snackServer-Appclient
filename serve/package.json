@@ -1,0 +1,22 @@
+{
+  "name": "serve",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@alicloud/sms-sdk": "^1.1.6",
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mysql2": "^2.0.2",
+    "nodemailer": "^6.4.2",
+    "sequelize": "^5.21.3"
+  }
+}

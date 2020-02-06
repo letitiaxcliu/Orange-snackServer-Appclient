@@ -1,0 +1,79 @@
+body{
+  background-color: aliceblue;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.clear{
+  zoom: 1;
+}
+.login,.register,.forgetpwd{
+  width:100%;
+  height: 100%;
+  margin: 50px auto;
+}
+.register{
+    background:url("/images/bg.png")no-repeat center center;
+
+    /* background
+    :url("/images/bg(1).png")no-repeat center center; */
+}
+
+.register-box{
+    width: 340px;
+    padding: 30px 20px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 5px 8px 8px  #333;
+    /* background:url("/images/bg.png")no-repeat center center; */
+    background-size: cover;
+  }
+
+.right{
+  font-size: 58px;
+  color: lightblue;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.invalid-feedback{
+  font-size: 12px;
+}
+
+/* 注册 */
+.relabel{
+  width: 22%;
+  float: left;
+  line-height: 36px;
+}
+.reinput{
+  width: 78% !important;
+  float: left;
+}
+.code{
+  width: 78%;
+}
+.code>div{
+  width: 54%;
+  height: 20px;
+}
+.code div>input{
+  width: 100% !important;
+}
+.code>button{
+  width: 92px;
+  font-size: 13px;
+  line-height: 23px;
+}
+
+.loginbtn{
+  font-size: 14px;
+}

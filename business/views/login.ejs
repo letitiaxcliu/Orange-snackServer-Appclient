@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="never">
+    <title>Letitia_后台管理-登录</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <div class="login container-fluid">
+        <div class="row">
+          <div class="col-6">
+            <div class="register-box">
+              <form>
+                <!-- <div class="form-group">
+                  <label for="username">用户名</label>
+                  <input type="text" class="form-control " id="username" autocomplete="off" placeholder="输入用户名" name="username" />
+                  <div class="invalid-feedback"></div>
+                </div> -->
+                
+                <div class="form-group">
+                  <label for="email">邮箱</label>
+                  <input type="text" class="form-control" id="email" autocomplete="off" placeholder="输入邮箱" name="email" />
+                  <div class="invalid-feedback"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="pwd">密码</label>
+                  <input type="password" class="form-control" id="pwd" autocomplete="off" placeholder="输入密码" name="pwd" />
+                  <div class="invalid-feedback"></div>
+                </div>
+                
+                <button id="login" type="button" class="btn btn-primary btn-block">登录</button>
+                <div><span>忘记密码？<a href="/forgetpwd">找回密码</a></span><span>没有账号？<a href="/register">注册</a></span> </div>
+              </form>
+            </div>
+          </div>
+            
+          <!-- <div class="col-6">
+            <div class="right">Lay</div>
+          </div> -->
+        </div>
+    </div>
+
+    <script src="/js/validForm.js"></script>
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

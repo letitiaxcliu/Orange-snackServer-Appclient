@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="referrer" content="never">
+  <title>Letitia_后台管理</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+  <div class="mainbox ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#">后台管理</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#c">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="c">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link  mr-5" href="#" id="user_name">XXX</a>
+          </li>
+        </ul>
+        <!-- 按钮 -->
+        <div class="btn btn-primary" id="signout">退出</div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 侧边菜单 -->
+        <div class="col-xl-1 col-2 aside_menu">
+          <div class="accordion" id="parent">
+            <!-- <div class="card del_border del_padding del_border_radius">
+              <div class="card-header del_padding mb-0">
+                <h2 class="mb-0">
+                  <button class="btn btn-none" type="button">
+                    首页
+                  </button>
+                </h2>
+              </div>
+            </div> -->
+            <div class="card del_padding del_border del_border_radius">
+              <div class="card-header del_padding mb-0">
+                <h2 class="mb-0">
+                  <button class="btn btn-none text-center" type="button"
+                   data-toggle="collapse" data-target="#management" data-title="商品管理">
+                    管理
+                  </button>
+                </h2>
+              </div>
+              <div id="management" class="collapse" data-parent="#parent">
+                <div class="card-body del_padding mb-0">
+                  <ul class="list-group del_border_radius" id="list-group">
+                    <li class="list-group-item" data-subtitle="添加商品" name="addproducts">添加</li>
+                    <li class="list-group-item" data-subtitle="编辑商品" name="editproducts">编辑</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="col-xl-11 col-10 offset-2 offset-xl-1">
+          <!-- 导航栏 -->
+          <nav>
+            <ul class="breadcrumb" id="breadcrumb">
+              <li class="breadcrumb-item">Welcome!</li>
+            </ul>
+          </nav>
+
+          <!-- 添加商品 -->
+          <div class="addproducts">
+            <form>
+                <div class="form-group">
+                  <label for="addpro_type">商品类型</label>
+                  <select class="form-control" id="addpro_type" name="addpro_type">
+                    <option selected value="default">选择商品类型</option>
+                    <!-- <option>服装</option> -->
+                  </select>
+                  <div class="invalid-feedback">请选择商品类型</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="addpro_name">商品名称</label>
+                    <input type="text" class="form-control" id="addpro_name" autocomplete="off" placeholder="请输入商品名称"
+                    name="addpro_name" maxlength="30">
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="addpro_price">价格</label>
+                    <input type="text" class="form-control" id="addpro_price" name="addpro_price" autocomplete="off" placeholder="输入商品价格">
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="addpro_vipprice">会员价格</label>
+                    <input type="text" class="form-control" id="addpro_vipprice" name="addpro_vipprice" autocomplete="off" placeholder="输入会员价格" disabled>
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="open_vip">
+                    <label class="form-check-label" for="open_vip">是否开启会员价格</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="addpro_detail">详情</label>
+                    <input type="text" class="form-control" id="addpro_detail" name="addpro_detail" autocomplete="off" placeholder="商品详情描述" maxlength="180">
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="addpro_count">库存</label>
+                    <input type="text" class="form-control" id="addpro_count" name="addpro_count" autocomplete="off" placeholder="当前库存量">
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="upload">
+                        上传商品图片
+                        <input id="upload" class="form-control-file" type="file" accept="image/jpg,image/png,image/jpeg,image/gif" name="addpro_img">
+                        <div class="invalid-feedback"></div>
+                    </label>
+                </div>
+
+                <div class="form-group previewbox">
+                  <div class="preview_img" id="preview_img"></div>
+                </div>
+
+                <button type="button" class="btn btn_submit btn-primary" id="commit">Submit</button>
+            </form>
+          </div>
+
+          <!-- 编辑商品 -->
+          <div class="editproducts">
+            <table class="table table-bordered text-center table-hover table-sm">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox">
+                  </th>
+                  <th>序号</th>
+                  <th>商品图片</th>
+                  <th>商品id</th>
+                  <th>商品名称</th>
+                  <th>商品价格</th>
+                  <th>vip价格</th>
+                  <th>是否开启vip价格</th>
+                  <th>商品类型</th>
+                  <th>库存量</th>
+                  <th>上架日期</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                  <td><input type="checkbox"></td>
+                  <td>1</td>
+                  <td>
+                    <div class="img-box">
+                      <img class="autoimg" src="https://dss2.bdstatic.com/6Ot1bjeh1BF3odCf/it/u=191769974,1312808987&fm=74&app=80&f=PNG&size=f121,121?sec=1880279984&t=21704654250b0a057e61ecae54678f0c" alt="">
+                    </div>
+                  </td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td class="detail"></td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>
+                    <button type="button" class="btn btn-success btn-sm">查看</button>
+                    <button type="button" class="btn btn-dark btn-sm">编辑</button>
+                    <button type="button" class="btn btn-warning btn-sm">禁用</button>
+                    <button type="button" class="btn btn-danger btn-sm">删除</button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+            
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li id="prev" class="page-item pli"><a class="page-link" href="javascript:void(0);">上一页</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0);">当前第<span id="page"></span>页</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0);">共<span id="pagecount"></span>页</a></li>
+                <li id="next" class="page-item pli"><a class="page-link" href="javascript:void(0);">下一页</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/validForm.js"></script>
+  <script src="/js/jquery-3.4.1.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/index.js"></script>
+
+
+</body>
+
+</html>
